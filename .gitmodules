@@ -1,0 +1,6 @@
+[submodule "HoloUI"]
+	path = HoloUI
+	url = /mnt/files/Workspaces/workspace-kotlin/HoloUI-temp
+[submodule "SneakyMannequins"]
+	path = SneakyMannequins
+	url = /mnt/files/Workspaces/workspace-kotlin/SneakyMannequins-temp

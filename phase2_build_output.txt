@@ -1,0 +1,65 @@
+Starting a Gradle Daemon, 1 incompatible Daemon could not be reused, use --status for details
+> Task :HoloUI:checkKotlinGradlePluginConfigurationErrors
+> Task :SneakyMannequins-Plugin:checkKotlinGradlePluginConfigurationErrors
+> Task :SneakyMannequins-Plugin:processResources UP-TO-DATE
+> Task :SneakyMannequins-Plugin:processTestResources NO-SOURCE
+> Task :HoloUI:processResources NO-SOURCE
+> Task :HoloUI:processTestResources NO-SOURCE
+
+> Task :HoloUI:compileKotlin
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:25:13 Unresolved reference: activeHuds
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:25:31 Overload resolution ambiguity: 
+public inline fun <T> Iterable<TypeVariable(T)>.forEach(action: (TypeVariable(T)) -> Unit): Unit defined in kotlin.collections
+public inline fun <K, V> Map<out TypeVariable(K), TypeVariable(V)>.forEach(action: (Map.Entry<TypeVariable(K), TypeVariable(V)>) -> Unit): Unit defined in kotlin.collections
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:25:44 Unresolved reference: tick
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:72:9 Unresolved reference: activeHuds
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:85:19 Unresolved reference: activeHuds
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:109:20 Unresolved reference: activeHuds
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:112:9 Unresolved reference: activeHuds
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:115:44 Unresolved reference: activeHuds
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:118:19 Unresolved reference: activeHuds
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:120:17 Unresolved reference: flyAway
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:122:21 Unresolved reference: activeHuds
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:123:25 Unresolved reference: destroy
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:124:21 Unresolved reference: activeHuds
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:128:17 Unresolved reference: destroy
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:129:13 Unresolved reference: activeHuds
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:134:24 Unresolved reference: activeHuds
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:134:53 Unresolved reference: mannequinId
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:135:18 Overload resolution ambiguity: 
+public inline fun <T> Iterable<TypeVariable(T)>.forEach(action: (TypeVariable(T)) -> Unit): Unit defined in kotlin.collections
+public inline fun <K, V> Map<out TypeVariable(K), TypeVariable(V)>.forEach(action: (Map.Entry<TypeVariable(K), TypeVariable(V)>) -> Unit): Unit defined in kotlin.collections
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:135:28 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:136:13 Unresolved reference: activeHuds
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:151:9 Unresolved reference: activeHuds
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:151:27 Overload resolution ambiguity: 
+public inline fun <T> Iterable<TypeVariable(T)>.forEach(action: (TypeVariable(T)) -> Unit): Unit defined in kotlin.collections
+public inline fun <K, V> Map<out TypeVariable(K), TypeVariable(V)>.forEach(action: (Map.Entry<TypeVariable(K), TypeVariable(V)>) -> Unit): Unit defined in kotlin.collections
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:151:40 Unresolved reference: destroy
+e: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/HoloUI/src/main/kotlin/com/sneakymouse/holoui/HoloController.kt:152:9 Unresolved reference: activeHuds
+
+> Task :HoloUI:compileKotlin FAILED
+
+[Incubating] Problems report is available at: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':HoloUI:compileKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 10s
+4 actionable tasks: 3 executed, 1 up-to-date

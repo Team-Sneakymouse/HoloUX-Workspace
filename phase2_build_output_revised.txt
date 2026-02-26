@@ -1,0 +1,52 @@
+> Task :SneakyMannequins-Plugin:checkKotlinGradlePluginConfigurationErrors
+> Task :HoloUI:checkKotlinGradlePluginConfigurationErrors
+> Task :SneakyMannequins-Plugin:processResources UP-TO-DATE
+> Task :SneakyMannequins-Plugin:processTestResources NO-SOURCE
+> Task :HoloUI:processResources NO-SOURCE
+> Task :HoloUI:processTestResources NO-SOURCE
+> Task :HoloUI:compileKotlin
+> Task :HoloUI:compileJava NO-SOURCE
+> Task :HoloUI:classes UP-TO-DATE
+> Task :HoloUI:jar
+> Task :HoloUI:assemble
+> Task :HoloUI:compileTestKotlin NO-SOURCE
+> Task :HoloUI:compileTestJava NO-SOURCE
+> Task :HoloUI:testClasses UP-TO-DATE
+> Task :HoloUI:test NO-SOURCE
+> Task :HoloUI:check UP-TO-DATE
+> Task :HoloUI:build
+
+> Task :SneakyMannequins-Plugin:compileKotlin
+w: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/SneakyMannequins-Plugin/src/main/kotlin/com/sneakymannequins/SneakyMannequins.kt:118:27 Elvis operator (?:) always returns the left operand of non-nullable type Location
+w: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/SneakyMannequins-Plugin/src/main/kotlin/com/sneakymannequins/managers/MannequinManager.kt:400:63 Parameter 'player' is never used
+w: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/SneakyMannequins-Plugin/src/main/kotlin/com/sneakymannequins/managers/MannequinManager.kt:411:17 Variable 'def' is never used
+w: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/SneakyMannequins-Plugin/src/main/kotlin/com/sneakymannequins/managers/MannequinManager.kt:725:56 Parameter 'player' is never used
+w: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/SneakyMannequins-Plugin/src/main/kotlin/com/sneakymannequins/managers/MannequinManager.kt:726:13 Variable 'state' is never used
+w: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/SneakyMannequins-Plugin/src/main/kotlin/com/sneakymannequins/managers/MannequinManager.kt:743:70 Parameter 'yaw' is never used
+w: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/SneakyMannequins-Plugin/src/main/kotlin/com/sneakymannequins/managers/MannequinManager.kt:1105:9 Parameter 'palId' is never used
+w: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/SneakyMannequins-Plugin/src/main/kotlin/com/sneakymannequins/managers/MannequinManager.kt:1160:34 Parameter 'player' is never used
+w: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/SneakyMannequins-Plugin/src/main/kotlin/com/sneakymannequins/managers/MannequinManager.kt:1182:33 Parameter 'player' is never used
+w: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/SneakyMannequins-Plugin/src/main/kotlin/com/sneakymannequins/managers/MannequinManager.kt:1201:35 Parameter 'player' is never used
+w: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/SneakyMannequins-Plugin/src/main/kotlin/com/sneakymannequins/managers/MannequinManager.kt:1229:59 Parameter 'backwards' is never used
+
+> Task :SneakyMannequins-Plugin:compileJava NO-SOURCE
+> Task :SneakyMannequins-Plugin:classes UP-TO-DATE
+> Task :SneakyMannequins-Plugin:jar
+> Task :SneakyMannequins-Plugin:assemble
+> Task :SneakyMannequins-Plugin:compileTestKotlin NO-SOURCE
+> Task :SneakyMannequins-Plugin:compileTestJava NO-SOURCE
+> Task :SneakyMannequins-Plugin:testClasses UP-TO-DATE
+> Task :SneakyMannequins-Plugin:test NO-SOURCE
+> Task :SneakyMannequins-Plugin:check UP-TO-DATE
+> Task :SneakyMannequins-Plugin:build
+
+[Incubating] Problems report is available at: file:///mnt/files/Workspaces/workspace-kotlin/SneakyMannequins/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 12s
+7 actionable tasks: 6 executed, 1 up-to-date
