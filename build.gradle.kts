@@ -1,6 +1,6 @@
 plugins {
     kotlin("jvm") version "1.9.21" apply false
-    id("xyz.jpenilla.run-paper") version "3.0.2" apply false
+    id("xyz.jpenilla.run-paper") version "3.0.2"
 }
 
 allprojects {
@@ -10,5 +10,15 @@ allprojects {
     repositories {
         mavenCentral()
         maven("https://repo.papermc.io/repository/maven-public/")
+    }
+}
+
+evaluationDependsOn(":HoloUI")
+evaluationDependsOn(":SneakyMannequins-Plugin")
+
+tasks {
+    runServer {
+        minecraftVersion("1.21.4")
+        pluginJars.from(project(":SneakyMannequins-Plugin").tasks.named("jar"))
     }
 }
