@@ -1,100 +1,56 @@
-# SneakyMannequins
+# HoloUX Workspace
 
-A Paper 1.21.4 plugin that renders fully interactive mannequin previews built from per-pixel text displays. Players can walk up to a mannequin, browse a holographic HUD, and customise a live 3D skin preview assembled on the server from configurable layers — hair, shirt, pants, body, and more. No resource pack is required; all rendering uses clientbound NMS packets.
+A unified workspace for developing high-performance holographic user interfaces for Minecraft (Paper). This repository serves as a meta-project container using Git submodules to manage its core components.
 
-## Features
+## Repositories
 
-### Per-Pixel Skin Rendering
-Each mannequin is drawn with individual `TextDisplay` entities — one per visible pixel — positioned and coloured to recreate all faces of the Minecraft player model. Only changed pixels are updated when selections change, keeping network traffic minimal.
+This workspace consists of two primary repositories:
 
-### Layered Skin Composition
-Skins are composed from stacked PNG layers (body, pants, shirt, hair, etc.) configured in `config.yml`. Each layer can have multiple part options (e.g. several hairstyles) and supports two independent colour channels derived automatically from the source artwork.
+- **[HoloUI](./HoloUI)**: A standalone library for high-performance NMS holographic UI management (TextDisplays, ItemDisplays, and virtual Interaction entities).
+- **[SneakyMannequins](./SneakyMannequins)**: A feature-rich plugin that utilizes HoloUI to render interactive 3D skin previews and customization HUDs.
 
-### Colour Masking & Tinting
-When a layer PNG is loaded, the plugin analyses its pixels and splits them into two colour channels using configurable clustering strategies:
-- **HSB** — k-means in hue/saturation/brightness (default, best all-rounder)
-- **HUE** — largest hue gap (fast, works well when colours are clearly different hues)
-- **RGB** — k-means in Euclidean RGB space
+## Quick Start
 
-Each channel can be tinted independently from a named colour palette. Tinting preserves the original luminance and colour variance of the artwork, so shading detail is maintained.
+### 1. Clone with Submodules
+```bash
+git clone --recursive <repository-url>
+cd HoloUX-Workspace
+```
 
-### Holographic HUD
-When a player approaches a mannequin, a virtual control panel spawns as packet-only `TextDisplay` entities that orbit the mannequin based on the player's position — like a holographic heads-up display. Buttons highlight when the crosshair hovers over them, and clicks are resolved by look-direction through a single `Interaction` entity.
+### 2. Build Everything
+This workspace provides a unified Gradle harness to build and test all components at once.
+```bash
+./gradlew build
+```
 
-**Buttons:**
+### 3. Run Test Server
+Launch a Paper 1.21.4 server with both the library and plugin injected.
+```bash
+./gradlew runServer
+```
 
-| Left column | Right column |
-|---|---|
-| Model (classic / slim) | Layer |
-| Pose | Part |
-| Random *(placeholder)* | Channel |
-| | Color |
+## Workspace Structure
 
-A status line at the top shows the last action taken.
-
-**Left-click** cycles forward; **right-click** cycles backward. The Part and Color buttons have an "active mode" — click once to activate, then click anywhere on the Interaction entity to cycle through options.
-
-### Configurable HUD Appearance
-Every button's text (with full [MiniMessage](https://docs.advntr.dev/minimessage/format.html) support), translation, line width, and background colours (default & highlighted) are configurable in `config.yml`. An optional `ItemDisplay` frame can be enabled as a backdrop art asset behind the buttons.
-
-### Command Triggers
-Server admins can attach console commands to mannequin events — hover, click, part-change (per-layer), and color-change. Placeholders like `{player}`, `{part}`, `{color}`, `{color_r}/{color_g}/{color_b}`, and `{x}/{y}/{z}` are substituted automatically. The defaults ship with themed sounds and coloured particle effects.
-
-### Palettes
-A rich set of built-in colour palettes: skin tones, hair, eyes, primary, pastel, neon, jewel, warm, cool, greyscale, metallic, fabric, and earth tones — all easily extended in config.
-
-## Commands
-
-| Command | Description |
-|---|---|
-| `/mannequin` | Spawn a mannequin at your feet |
-| `/mannequin remove` | Remove the nearest mannequin |
-| `/mannequin reload` | Reload config and re-render all mannequins |
-| `/mannequin remask <HSB\|HUE\|RGB> <layer> <part>` | Re-run colour-channel masking for a specific part |
-
-Permission node: `sneakymannequins.command.mannequin`
-
-## Configuration
-
-The full config lives at `plugins/SneakyMannequins/config.yml` (auto-generated from defaults on first run). Key sections:
-
-- **`plugin`** — debug mode, default skin model, preprocessing/masking settings.
-- **`triggers`** — console commands fired on hover, click, part-change, and color-change events.
-- **`hud-buttons`** — per-button text (MiniMessage), translation, line-width, background colours.
-- **`hud-frame`** — optional `ItemDisplay` backdrop (item, display context, translation, scale).
-- **`layers.palettes`** — named colour palettes (hex RGB values).
-- **`layers.order`** — rendering order (bottom to top).
-- **`layers.definitions`** — per-layer display name, directory, colour masking toggle, and default palettes.
-
-### Adding Content
-
-Place 64×64 RGBA PNGs in `plugins/SneakyMannequins/layers/<Layer>/`. On load, the plugin will automatically generate `*_mask_1.png` and `*_mask_2.png` colour-channel files alongside each source image. For the body layer, if no PNGs exist, `default.png` and `default_slim.png` are seeded automatically.
-
-## Development
-
-- **Build:** `./gradlew build`
-- **Test server:** `./gradlew runServer` (Paper 1.21.4)
-- **Entry point:** `com.sneakymannequins.SneakyMannequins`
-- **NMS:** Version-specific handlers live in `src/main/kotlin/com/sneakymannequins/nms/v1_21_4/`. Other versions fall back to a no-op handler.
+The root directory acts as a "testing harness" and development coordinator:
+- **`HoloUI/`**: The library source (Git Submodule).
+- **`SneakyMannequins/`**: The plugin source (Git Submodule).
+- **`run/`**: Shared server environment used by both modules for testing.
+- **`build.gradle.kts`**: Unified build logic coordinating the child modules.
 
 ## Architecture
 
-```
-SneakyMannequins (main plugin)
-├── commands/         Command registration (Brigadier)
-├── managers/
-│   ├── MannequinManager   Lifecycle, HUD, hover, interaction, triggers
-│   ├── LayerManager        Layer/option/palette loading, colour masking
-│   └── MannequinPersistence   Save/load mannequin locations
-├── model/            Data classes (Mannequin, SkinSelection, LayerOption, …)
-├── nms/              VolatileHandler interface + per-version implementations
-├── render/           PixelProjector (maps 2D skin pixels → 3D world positions)
-└── util/             SkinComposer, TextUtility, …
+```mermaid
+graph TD
+    SM[SneakyMannequins Plugin] --> HUI[HoloUI Library]
+    HUI --> HC[HoloController]
+    HC --> HUD[HoloHUD Instances]
+    HUD --> HB[HoloButtons]
+    HUI --> HH[HoloHandler NMS]
+    HH --> HH1214[HoloHandler1214]
 ```
 
-## Known Limitations
+## Contributing
 
-- Per-pixel text displays are network-heavy; batching and LOD optimisation may be added later.
-- Only Paper 1.21.4 has a concrete NMS handler; other versions are non-functional.
-- The **Random** button is a placeholder with no behaviour yet.
-- Pose toggling is tracked but not yet visually applied to the mannequin model.
+For component-specific development instructions, refer to the README files within each submodule:
+- [HoloUI README](./HoloUI/README.md)
+- [SneakyMannequins README](./SneakyMannequins/README.md)
