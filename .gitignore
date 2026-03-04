@@ -28,3 +28,5 @@ run.bat
 # Web server images directory (volume bind)
 /web/images/*
 !/web/images/.gitkeep
+
+./SneakyMannequins.bac
