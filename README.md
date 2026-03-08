@@ -9,33 +9,33 @@ This workspace consists of two primary repositories:
 - **[SneakyHolos](./SneakyHolos)**: A standalone library for high-performance NMS holographic UI management (TextDisplays, ItemDisplays, and virtual Interaction entities).
 - **[SneakyMannequins](./SneakyMannequins)**: A feature-rich plugin that utilizes SneakyHolos to render interactive 3D skin previews and customization HUDs.
 
-## Quick Start
+## Development Setup
 
-### 1. Clone with Submodules
+### 1. Webserver for Online Features
+The `SneakyMannequins` plugin requires a webserver to serve dynamic skin assets. A dev webserver is provided via Docker.
+
 ```bash
-git clone --recursive https://github.com/Team-Sneakymouse/HoloUX-Workspace
-cd HoloUX-Workspace
+cd SneakyMannequins
+docker-compose up -d
 ```
+The webserver will be available at `http://localhost:8080`.
 
-### 2. Build Everything
-This workspace provides a unified Gradle harness to build and test all components at once.
+### 2. External Exposure (Optional)
+To test online features from outside your local network (e.g., such as for feeding the created images to the MineSkin api), you can use Pinggy to create a public tunnel:
+
 ```bash
-./gradlew build
+ssh -p 443 -R0:localhost:8080 a.pinggy.io
 ```
+Note the `.pinggy.link` URL provided in the terminal.
 
-### 3. Run Test Server
-Launch a Paper 1.21.4 server with both the library and plugin injected.
-```bash
-./gradlew runServer
+### 3. Plugin Configuration
+Update your `run/plugins/SneakyMannequins/config.yml` to point to your dev webserver:
+
+```yaml
+images:
+  storage-path: "../web/images/"
+  url-prefix: "http://localhost:8080/images/" # Change this to your Pinggy URL for external testing
 ```
-
-## Workspace Structure
-
-The root directory acts as a "testing harness" and development coordinator:
-- **`SneakyHolos/`**: The library source (Git Submodule).
-- **`SneakyMannequins/`**: The plugin source (Git Submodule).
-- **`run/`**: Shared server environment used by both modules for testing.
-- **`build.gradle.kts`**: Unified build logic coordinating the child modules.
 
 ## Architecture
 
