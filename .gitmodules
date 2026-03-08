@@ -1,6 +1,6 @@
 [submodule "SneakyHolos"]
 	path = SneakyHolos
-	url = /mnt/files/Workspaces/workspace-kotlin/SneakyHolos-temp
+	url = https://github.com/Team-Sneakymouse/SneakyHolos
 [submodule "SneakyMannequins"]
 	path = SneakyMannequins
-	url = /mnt/files/Workspaces/workspace-kotlin/SneakyMannequins-temp
+	url = https://github.com/Team-Sneakymouse/SneakyMannequins

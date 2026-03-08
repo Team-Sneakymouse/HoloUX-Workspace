@@ -13,7 +13,7 @@ This workspace consists of two primary repositories:
 
 ### 1. Clone with Submodules
 ```bash
-git clone --recursive <repository-url>
+git clone --recursive https://github.com/Team-Sneakymouse/HoloUX-Workspace
 cd HoloUX-Workspace
 ```
 
