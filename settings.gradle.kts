@@ -1,7 +1,7 @@
 rootProject.name = "HoloUX-Workspace"
 
-include(":HoloUI")
-project(":HoloUI").projectDir = file("HoloUI")
+include(":SneakyHolos")
+project(":SneakyHolos").projectDir = file("SneakyHolos")
 
 include(":SneakyMannequins-Plugin")
 project(":SneakyMannequins-Plugin").projectDir = file("SneakyMannequins")

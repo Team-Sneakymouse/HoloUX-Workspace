@@ -13,7 +13,7 @@ allprojects {
     }
 }
 
-evaluationDependsOn(":HoloUI")
+evaluationDependsOn(":SneakyHolos")
 evaluationDependsOn(":SneakyMannequins-Plugin")
 
 tasks {

@@ -6,8 +6,8 @@ A unified workspace for developing high-performance holographic user interfaces 
 
 This workspace consists of two primary repositories:
 
-- **[HoloUI](./HoloUI)**: A standalone library for high-performance NMS holographic UI management (TextDisplays, ItemDisplays, and virtual Interaction entities).
-- **[SneakyMannequins](./SneakyMannequins)**: A feature-rich plugin that utilizes HoloUI to render interactive 3D skin previews and customization HUDs.
+- **[SneakyHolos](./SneakyHolos)**: A standalone library for high-performance NMS holographic UI management (TextDisplays, ItemDisplays, and virtual Interaction entities).
+- **[SneakyMannequins](./SneakyMannequins)**: A feature-rich plugin that utilizes SneakyHolos to render interactive 3D skin previews and customization HUDs.
 
 ## Quick Start
 
@@ -32,7 +32,7 @@ Launch a Paper 1.21.4 server with both the library and plugin injected.
 ## Workspace Structure
 
 The root directory acts as a "testing harness" and development coordinator:
-- **`HoloUI/`**: The library source (Git Submodule).
+- **`SneakyHolos/`**: The library source (Git Submodule).
 - **`SneakyMannequins/`**: The plugin source (Git Submodule).
 - **`run/`**: Shared server environment used by both modules for testing.
 - **`build.gradle.kts`**: Unified build logic coordinating the child modules.
@@ -41,7 +41,7 @@ The root directory acts as a "testing harness" and development coordinator:
 
 ```mermaid
 graph TD
-    SM[SneakyMannequins Plugin] --> HUI[HoloUI Library]
+    SM[SneakyMannequins Plugin] --> HUI[SneakyHolos Library]
     HUI --> HC[HoloController]
     HC --> HUD[HoloHUD Instances]
     HUD --> HB[HoloButtons]
@@ -52,5 +52,5 @@ graph TD
 ## Contributing
 
 For component-specific development instructions, refer to the README files within each submodule:
-- [HoloUI README](./HoloUI/README.md)
+- [SneakyHolos README](./SneakyHolos/README.md)
 - [SneakyMannequins README](./SneakyMannequins/README.md)
