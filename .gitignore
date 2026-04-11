@@ -29,4 +29,5 @@ run.bat
 /web/images/*
 !/web/images/.gitkeep
 
-./SneakyMannequins.bac
+# Reference codebases
+references/*
