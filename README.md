@@ -46,7 +46,7 @@ graph TD
     HC --> HUD[HoloHUD Instances]
     HUD --> HB[HoloButtons]
     HUI --> HH[HoloHandler NMS]
-    HH --> HH1214[HoloHandler1214]
+    HH --> HH262[HoloHandler262]
 ```
 
 ## Contributing
