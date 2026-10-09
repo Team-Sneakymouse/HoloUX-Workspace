@@ -14,7 +14,14 @@ allprojects {
     repositories {
         mavenCentral()
         maven("https://repo.papermc.io/repository/maven-public/")
+        maven("https://maven.sneakyrp.com/releases")
     }
+}
+
+val characterManagerPlugin by configurations.creating
+
+dependencies {
+    characterManagerPlugin("io.github.team-sneakymouse:sneakycharactermanager:2026.10.09-84db8a554af1")
 }
 
 evaluationDependsOn(":SneakyHolos")
@@ -28,6 +35,6 @@ tasks {
         })
         jvmArgs("-Dcom.mojang.eula.agree=true")
         pluginJars.from(project(":SneakyMannequins-Plugin").tasks.named("jar"))
-        pluginJars.from(files("../SneakyCharacterManager-Paper/build/libs/SneakyCharacterManager.jar"))
+        pluginJars.from(characterManagerPlugin)
     }
 }
