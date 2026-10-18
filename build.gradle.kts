@@ -23,7 +23,7 @@ val sneakyUtilsPlugin by configurations.creating
 
 dependencies {
     characterManagerPlugin("io.github.team-sneakymouse:sneakycharactermanager:2026.10.09-84db8a554af1")
-    sneakyUtilsPlugin("io.github.team-sneakymouse:sneakyutils:2026.10.18-4b5831b0b997")
+    sneakyUtilsPlugin("io.github.team-sneakymouse:sneakyutils:2026.10.18-657d452bd6f4")
 }
 
 evaluationDependsOn(":SneakyHolos")
